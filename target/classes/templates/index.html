@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Gestión de Entidades - Sistema de Clubes</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      padding: 2rem;
+      background-color: #f0f2f5;
+    }
+    .tab-content {
+      margin-top: 2rem;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1 class="text-center mb-4">Gestión de Entidades del Sistema de Clubes</h1>
+
+    <!-- Tabs -->
+    <ul class="nav nav-tabs" id="crudTabs" role="tablist">
+      <li class="nav-item" role="presentation">
+        <a class="nav-link active" id="clubes-tab" data-bs-toggle="tab" href="#clubes" role="tab" aria-controls="clubes" aria-selected="true">Clubes</a>
+      </li>
+      <li class="nav-item" role="presentation">
+        <a class="nav-link" id="jugadores-tab" data-bs-toggle="tab" href="#jugadores" role="tab" aria-controls="jugadores" aria-selected="false">Jugadores</a>
+      </li>
+      <li class="nav-item" role="presentation">
+        <a class="nav-link" id="entrenadores-tab" data-bs-toggle="tab" href="#entrenadores" role="tab" aria-controls="entrenadores" aria-selected="false">Entrenadores</a>
+      </li>
+      <li class="nav-item" role="presentation">
+        <a class="nav-link" id="asociaciones-tab" data-bs-toggle="tab" href="#asociaciones" role="tab" aria-controls="asociaciones" aria-selected="false">Asociaciones</a>
+      </li>
+      <li class="nav-item" role="presentation">
+        <a class="nav-link" id="competiciones-tab" data-bs-toggle="tab" href="#competiciones" role="tab" aria-controls="competiciones" aria-selected="false">Competiciones</a>
+      </li>
+    </ul>
+
+    <!-- Tab contents -->
+    <div class="tab-content" id="crudTabsContent">
+
+      <!-- Clubes -->
+      <div class="tab-pane fade show active" id="clubes" role="tabpanel">
+        <div id="clubes-content"></div>
+      </div>
+
+      <!-- Jugadores -->
+      <div class="tab-pane fade" id="jugadores" role="tabpanel">
+        <div id="jugadores-content"></div>
+      </div>
+
+      <!-- Entrenadores -->
+      <div class="tab-pane fade" id="entrenadores" role="tabpanel">
+        <div id="entrenadores-content"></div>
+      </div>
+
+      <!-- Asociaciones -->
+      <div class="tab-pane fade" id="asociaciones" role="tabpanel">
+        <div id="asociaciones-content"></div>
+      </div>
+
+      <!-- Competiciones -->
+      <div class="tab-pane fade" id="competiciones" role="tabpanel">
+        <div id="competiciones-content"></div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Bootstrap y scripts por entidad -->
+  <script src="js/clubes.js"></script>
+  <script src="js/jugadores.js"></script>
+  <script src="js/entrenadores.js"></script>
+  <script src="js/asociaciones.js"></script>
+  <script src="js/competiciones.js"></script>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      document.getElementById("clubes-tab").addEventListener("click", cargarVistaClubes);
+      document.getElementById("jugadores-tab").addEventListener("click", cargarVistaJugadores);
+      document.getElementById("entrenadores-tab").addEventListener("click", cargarVistaEntrenadores);
+      document.getElementById("asociaciones-tab").addEventListener("click", cargarVistaAsociaciones);
+      document.getElementById("competiciones-tab").addEventListener("click", cargarVistaCompeticiones);
+
+      cargarVistaClubes(); // Inicial por defecto
+    });
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
